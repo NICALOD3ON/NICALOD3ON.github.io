@@ -20,12 +20,14 @@ article {
   font-optical-sizing: auto;
   font-weight: 500;
   font-style: normal;
+  font-size: larger;
 }
 
 .bungee-regular {
     font-family: "Bungee", sans-serif;
     font-weight: 900;
     font-style: normal;
+    font-size: x-large;
   }
   
   .poppins-thin {
