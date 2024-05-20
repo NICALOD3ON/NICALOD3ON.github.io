@@ -10,7 +10,7 @@ const replayBtn = document.getElementById('replay-btn');
 const fullscreenBtn = document.getElementById('fullscreen-btn');
 
 // Function to toggle play/pause
-function togglePlay() {
+function togglePlayPause() {
   if (videoPlayer.paused) {
     videoPlayer.play();
     playBtn.style.display = 'none';
@@ -23,11 +23,11 @@ function togglePlay() {
 }
 
 // Function to pause video
-function pauseVideo() {
-  videoPlayer.pause();
-  playBtn.style.display = 'inline-block';
-  pauseBtn.style.display = 'none';
-}
+// function pauseVideo() {
+//   videoPlayer.pause();
+//   playBtn.style.display = 'inline-block';
+//   pauseBtn.style.display = 'none';
+// }
 
 // Function to skip to start of video
 function skipToStart() {
