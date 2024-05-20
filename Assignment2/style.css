@@ -4,6 +4,9 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    background-image: url('NICALOD3ON/NICALOD3ON.github.io/Assignment2/background.jpg');
+    background-size: cover;
+    background-position: center;
   }
 
   header {
@@ -34,7 +37,7 @@ body {
     max-width: 800px;
     margin: 20px auto;
     padding: 20px;
-    background-image: url('Assignment2/woodbg.jpg');
+    background-image: url('NICALOD3ON/NICALOD3ON.github.io/Assignment2/background.jpg');
     background-size: cover; 
     background-repeat: no-repeat;
     background-position: center;
