@@ -1,0 +1,285 @@
+<!-- Showing the style.css code first. It is also available in the style.css file in my repository.
+  
+// Get references to DOM elements
+const videoPlayer = document.getElementById('custom-video-player');
+const playBtn = document.getElementById('play-btn');
+const pauseBtn = document.getElementById('pause-btn');
+const skipToStartBtn = document.getElementById('skip-to-start-btn');
+const rewindBtn = document.getElementById('rewind-btn');
+const fastForwardBtn = document.getElementById('fast-forward-btn');
+const skipToEndBtn = document.getElementById('skip-to-end-btn');
+const replayBtn = document.getElementById('replay-btn');
+const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+// Function to toggle play/pause
+function togglePlayPause() {
+  if (videoPlayer.paused) {
+    videoPlayer.play();
+    playBtn.style.display = 'none';
+    pauseBtn.style.display = 'inline-block';
+  } else {
+    videoPlayer.pause();
+    playBtn.style.display = 'inline-block';
+    pauseBtn.style.display = 'none';
+  }
+}
+
+// Function to pause video
+// function pauseVideo() {
+//   videoPlayer.pause();
+//   playBtn.style.display = 'inline-block';
+//   pauseBtn.style.display = 'none';
+// }
+
+// Function to skip to start of video
+function skipToStart() {
+  videoPlayer.currentTime = 0;
+}
+
+// Function to rewind video
+function rewind() {
+  videoPlayer.currentTime -= 10; // Rewind by 10 seconds
+}
+
+// Function to fast forward video
+function fastForward() {
+  videoPlayer.currentTime += 10; // Fast forward by 10 seconds
+}
+
+// Function to skip to end of video
+function skipToEnd() {
+  videoPlayer.currentTime = videoPlayer.duration;
+}
+
+// Function to replay video
+function replay() {
+  videoPlayer.currentTime = 0;
+  videoPlayer.play();
+  playBtn.style.display = 'none';
+  pauseBtn.style.display = 'inline-block';
+}
+
+// Function to toggle fullscreen mode
+I searched up how to ensure the fullscreen worked on all browsers.
+This enables maximum accessibility for all users.
+function toggleFullscreen() {
+  if (videoPlayer.requestFullscreen) {
+    videoPlayer.requestFullscreen();
+  } else if (videoPlayer.mozRequestFullScreen) { // Firefox
+    videoPlayer.mozRequestFullScreen();
+  } else if (videoPlayer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+    videoPlayer.webkitRequestFullscreen();
+  } else if (videoPlayer.msRequestFullscreen) { // IE/Edge
+    videoPlayer.msRequestFullscreen();
+  }
+}
+
+// Event listeners
+playBtn.addEventListener('click', togglePlay);
+pauseBtn.addEventListener('click', pauseVideo);
+skipToStartBtn.addEventListener('click', skipToStart);
+rewindBtn.addEventListener('click', rewind);
+fastForwardBtn.addEventListener('click', fastForward);
+skipToEndBtn.addEventListener('click', skipToEnd);
+replayBtn.addEventListener('click', replay);
+fullscreenBtn.addEventListener('click', toggleFullscreen); -->
+
+
+<!-- Declare the document type and language -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set character encoding and viewport for responsiveness -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Set the title of the document -->
+  <title>Assignment2</title>
+ 
+  <!-- Include external stylesheets and fonts -->
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ 
+  <!-- Load the Gloria Hallelujah font from Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap" rel="stylesheet">
+
+  <!-- Inline CSS to set background image -->
+  <style>
+    body {
+      background-image: url('NICALOD3ON/NICALOD3ON.github.io/Assignment2/background.jpg');
+      background-size: cover;
+      background-position: center;
+    }
+  </style>
+
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+   
+    <!-- Title for the header section with specified font family -->
+    <h1 class="gloria-hallelujah-regular">Windmill Crafting Tutorial</h1>
+  </header>
+
+  <!-- Navigation Section -->
+  <nav>
+  
+    <!-- Unordered list for navigation links -->
+    <ul>
+  
+      <!-- List items with navigation links -->
+      <li><a class="gloria-hallelujah-regular" href="#">Home</a></li>
+      <li><a class="gloria-hallelujah-regular" href="#">Materials</a></li>
+      <li><a class="gloria-hallelujah-regular" href="#">Instructions</a></li>
+      <li><a class="gloria-hallelujah-regular" href="#">Contact Us</a></li>
+    </ul>
+  </nav>
+
+  <!-- Main Content Section -->
+  <main class="container">
+
+    <!-- Media Player Section -->
+    <div class="media-player">
+      <!-- Video player element with source -->
+      <!-- I wanted to do the crafting tutorial, because its child friendly and creative -->
+      <video id="custom-video-player" controls>
+        <source src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4" type="video/mp4">
+      </video>
+      <!-- Custom controls for the video player -->
+      <div class="custom-controls">
+        <!-- Button to play the video -->
+        <button id="play-btn" onclick="togglePlayPause()">
+          <!-- Play icon image -->
+          <img id="play-img" src="https://img.icons8.com/ios-glyphs/30/play--v1.png" alt="Play Button" width="24" height="24">
+        </button>
+        <!-- Button to pause the video -->
+        <button id="pause-btn" onclick="pauseVideo()">
+          <!-- Pause icon image -->
+          <img id="pause-img" src="https://img.icons8.com/ios-glyphs/30/pause.png" alt="Pause Button" width="24" height="24">
+        </button>
+        <!-- Button to skip to the start of the video.
+        This is necessary because if users want to start from the start they can -->
+        <button id="skip-to-start-btn" onclick="skipToStart()">
+          <!-- Skip to start icon image -->
+          <img id="skip-to-start-img" src="https://img.icons8.com/ios-glyphs/30/skip-to-start.png" alt="Skip to Start Button" width="24" height="24">
+        </button>
+        <!-- Button to rewind the video -->
+        <!-- The rewind button allows the user to replay the whole video -->
+        <!-- This is helpful, because when users can go back 10 seconds if they are behind. -->
+        <button id="rewind-btn" onclick="rewind()">
+          <!-- Rewind icon image -->
+          <img id="rewind-img" src="https://img.icons8.com/ios-glyphs/30/rewind.png" alt="Rewind Button" width="24" height="24">
+        </button>
+        <!-- Button to fast forward the video -->
+        <!-- If they are ahead of the video, they can skip forward 10 seconds-->
+        <button id="fast-forward-btn" onclick="fastForward()">
+          <!-- Fast forward icon image -->
+          <img id="fast-forward-img" src="https://img.icons8.com/ios-glyphs/30/fast-forward.png" alt="Fast Forward Button" width="24" height="24">
+        </button>
+        <!-- Button to skip to the end of the video -->
+        <button id="skip-to-end-btn" onclick="skipToEnd()">
+          <!-- Skip to end icon image -->
+          <!-- If the user wants to see the result of the tutorial, they can. -->
+          <img id="skip-to-end-img" src="https://img.icons8.com/ios-glyphs/30/end.png" alt="Skip to End Button" width="24" height="24">
+        </button>
+        <!-- Button to replay the video -->
+        <!-- The replay button allows the user to replay the whole video -->
+        <!-- This is helpful, because when users what to start the video again to make a new windmill, they can do it easily. -->
+        <button id="replay-btn" onclick="replay()">
+          <!-- Replay icon image -->
+          <img id="replay-img" src="https://img.icons8.com/ios-glyphs/30/replay.png" alt="Replay Button" width="24" height="24">
+        </button>
+        <!-- Button to toggle fullscreen mode -->
+        <!-- Toggling full screen will allow the users to see the video clearly. -->
+        <!-- It is also more immersing for the user -->
+        <button id="fullscreen-btn" onclick="toggleFullscreen()">
+          <!-- Fullscreen icon image -->
+          <img id="fullscreen-img" src="https://img.icons8.com/ios-glyphs/30/full-screen.png" alt="Fullscreen Button" width="24" height="24">
+        </button>
+      </div>
+    </div>
+
+     <!-- Additional Content Section -->
+     <section>
+
+      <!-- I chose this font because it reminds me of my art class. It is very organic and creative. -->
+      <!-- It replicates a pencil sketch or artistic handwriting. It is child friendly. --> 
+      <!-- It also matches thee 'crafting' aesthetic -->
+      <h2 class="gloria-hallelujah-regular">Step-by-Step Instructions</h2>
+      <ol>
+        <li>
+          <!-- The introduction is in bold to pleasantly welcome users to the tutorial -->
+          <strong>Introduction:</strong>
+          <p>Welcome! Today we will learn how to recreate this windmill with a few simple steps.</p>
+        </li>
+        <li>
+
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Materials Needed:</strong>
+          <ul>
+          <!-- I used dot point lines -->
+          <!-- This makes it accessible for the user -->
+          <!-- Makes it easy to understand and follow along -->
+          <!-- I transcribed this from the video myself -->
+            <li>Paper</li>
+            <li>Scissors</li>
+            <li>Straw or wooden stick</li>
+            <li>Push pin or thumbtack</li>
+            <li>Glue or tape</li>
+            <li>Markers or crayons (optional for decoration)</li>
+          </ul>
+        </li>
+        <li>
+          <!-- I also transcribed all the steps until the end, but simplified it so its easy to understand -->
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Step 1: Cut the Paper</strong>
+          <p>Start with a square piece of paper. Fold the paper diagonally in half to form a triangle. Fold the triangle in half again to form a smaller triangle. Unfold the paper back to the square shape. The creases will form an X.</p>
+        </li>
+        <li>
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Step 2: Make the Cuts</strong>
+          <p>Using scissors, cut along the creases starting from each corner of the square towards the center, stopping about halfway to the center point. Do not cut all the way through.</p>
+        </li>
+        <li>
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Step 3: Form the Windmill Blades</strong>
+          <p>Take one corner of each cut section and fold it towards the center. Do this for every other corner (four corners in total). Secure the corners in the center with glue, tape, or by using a push pin.</p>
+        </li>
+        <li>
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Step 4: Attach to the Stick</strong>
+          <p>Once all four corners are secured in the center, use a push pin or thumbtack to attach the paper windmill to the end of a straw or wooden stick. Ensure the pin or thumbtack is not too tight, so the windmill can spin freely.</p>
+        </li>
+        <li>
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Step 5: Optional Decoration</strong>
+          <p>Use markers or crayons to decorate the windmill as desired. This step is optional but adds a personal touch to your craft.</p>
+        </li>
+        <li>
+          <!-- I made this bold (strong) to stand out as a subheading -->
+          <!-- This indicates that it is important to pay attention to -->
+          <strong>Conclusion:</strong>
+          <p>Now you have an awesome windmill fan. Spin it gently to see it in action!</p>
+        </li>
+      </ol>
+    </section>
+  </main>
+
+  <!-- Footer Section -->
+  <!-- This shows all the credits necessary -->
+  <footer>
+    <p>&copy; 2024 Media Player Website. All rights reserved.</p>
+    <a href="https://icons8.com/icon/59862/play">Play</a> icon by <a href="https://icons8.com">Icons8</a>
+    <a href="https://icons8.com/icon/61012/pause">Pause</a> icon by <a href="https://icons8.com">Icons8</a>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    background-image: url('NICALOD3ON/NICALOD3ON.github.io/Assignment2/background.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+  header {
+    background: #3f95db;
+    color: #fff;
+    padding: 1em 0;
+    text-align: center;
+  }
+
+  nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background: #444;
+  }
+
+  nav ul li {
+    margin: 0 1em;
+  }
+
+  nav ul li a {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background-image: url('NICALOD3ON/NICALOD3ON.github.io/Assignment2/background.jpg');
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }  
+  
+  .media-player {
+    text-align: center;
+  }
+
+  .custom-controls {
+    margin-top: 10px;
+  }
+
+  .custom-controls button {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+
+  section h2 {
+    border-bottom: 2px solid #333;
+    padding-bottom: 0.5em;
+  }
+
+  section ol {
+    padding-left: 1em;
+    color: #000; /* Set the text color to black */
+  }
+
+  section ol li {
+    margin: 1em 0;
+  }
+  
+  .instructions {
+    color: #000; /* Set the text color to black */
+  }
+
+  .gloria-hallelujah-regular {
+    font-family: "Gloria Hallelujah", cursive;
+    font-weight: 400;
+    font-style: normal;
+  }
+
+  footer {
+    text-align: center;
+    padding: 1em 0;
+    background: #3f95db;
+    color: #fff;
+  }
