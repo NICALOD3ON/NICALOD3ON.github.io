@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Luckiest+Guy&family=Space+Grotesk&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Media Player Example</h1>
+    
+    <div class="outer"></div>
+        <section class="video-container"></section>
+            <video 
+            id="#my-video"
+            src="https://thelongesthumstore.sgp1.cdn.digitaloceanspaces.com/IM-2250/berry-bunch_handheld-windmill-fan.mp4"
+            controls
+            ></video>
+            <button id="play-pause-btn">
+                <img
+                  id="play-pause-img"
+                  src="https://img.icons8.com/ios-glyphs/30/play--v1.png"
+                  alt="Play Button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+              <button id="mute-unmute-btn">
+                <img
+                  id="mute-unmute-img"
+                  src="https://img.icons8.com/ios-glyphs/30/no-audio--v1.png"
+                  alt="Mute Button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+      
+              <div class="progress-bar">
+                <span id="progress-bar-fill"></span>
+              </div>
+              <button id="loop-btn">
+                <img
+                  id="loop-img"
+                  src="https://img.icons8.com/ios-glyphs/30/repeat.png"
+                  alt="Loop Button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+              <button id="decrease-volume-btn">
+                <img
+                  id="decrease-volume-img"
+                  src="https://img.icons8.com/ios-glyphs/30/low-volume.png"
+                  alt="Decrease volume Button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+              <button id="increase-volume-btn">
+                <img
+                  id="increase-volume-img"
+                  src="https://img.icons8.com/ios-glyphs/30/high-volume--v1.png"
+                  alt="Increase volume Button"
+                  width="24"
+                  height="24"
+                />
+              </button>
+            </section>
+            <section class="timeline">
+              <button id="step-1-btn">step 1</button>
+            </section>
+          </div>
+          <footer>
+            <a href="https://icons8.com/icon/61001/mute">Mute</a> icon by
+            <a href="https://icons8.com">Icons8</a>
+          </footer>
+</body>
+</html>
