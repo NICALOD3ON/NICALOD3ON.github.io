@@ -55,7 +55,7 @@ circles.forEach((circle, index) => {
   });
   
 function checkSequence(){
-    if (playerSequence.length) === sequence.length) {
+    if (playerSequence.length === sequence.length) {
         if (playerSequence.every((value, index) => value === sequence[index])) {
           // Player got the sequence right
           round++;
