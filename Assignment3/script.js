@@ -24,4 +24,18 @@ function generateSequence() {
     }
     return seq;
   }
+
+  function playSequence() {
+    canClick = false;
+    let i = 0;
+    let interval = setInterval(() => {
+      lightUp(sequence[i]);
+      i++;
+      if (i >= sequence.length) {
+        clearInterval(interval);
+        canClick = true;
+      }
+    }, 1000); // Adjust speed of sequence playback
+  }
+  
   
