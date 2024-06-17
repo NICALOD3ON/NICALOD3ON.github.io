@@ -2,23 +2,22 @@ const circles = document.querySelectorAll('.circle');
 const startBtn = document.getElementById('start-btn');
 const startContainer = document.querySelector('.start-container');
 const gameContainer = document.querySelector('.game-container');
+const scoreDisplay = document.getElementById('score');
 
-const COLORS = ['#ff6347', '#1e90ff', '#32cd32', '#ffd700', '#9400d3', '#ff4500'];
+const COLORS = ['#ffcccc', '#ccffcc', '#ccccff', '#ffffcc', '#ffccff', '#ccffff'];
 const NUM_CIRCLES = 6;
 let sequence = [];
 let playerSequence = [];
 let round = 0;
 let canClick = false;
 
-console.log("Script loaded"); // Check if script is loading correctly
-
 startBtn.addEventListener('click', startGame);
 
 function startGame() {
-    console.log("Start button clicked"); // Check if start button click event is detected
     startContainer.classList.add('hidden');
     gameContainer.classList.remove('hidden');
     round = 1;
+    scoreDisplay.textContent = 0;
     playerSequence = [];
     sequence = generateSequence();
     playSequence();
@@ -43,22 +42,21 @@ function playSequence() {
             clearInterval(interval);
             canClick = true;
         }
-    }, 1000); // Adjust speed of sequence playback
+    }, 1000);
 }
 
 function lightUp(index) {
-    circles[index].style.backgroundColor = COLORS[index];
-    circles[index].classList.add('selected'); // Add selected class
+    circles[index].style.opacity = 1;
     setTimeout(() => {
-        circles[index].style.backgroundColor = 'transparent';
-        circles[index].classList.remove('selected'); // Remove selected class
-    }, 500); // Adjust how long each circle stays lit up
+        circles[index].style.opacity = 0.5;
+    }, 500);
 }
 
 circles.forEach((circle, index) => {
     circle.addEventListener('click', () => {
         if (canClick) {
             playerSequence.push(index);
+            lightUp(index); // Light up when clicked
             checkSequence();
         }
     });
@@ -67,15 +65,14 @@ circles.forEach((circle, index) => {
 function checkSequence() {
     if (playerSequence.length === sequence.length) {
         if (playerSequence.every((value, index) => value === sequence[index])) {
-            // Player got the sequence right
             round++;
+            scoreDisplay.textContent = round - 1;
             playerSequence = [];
             setTimeout(() => {
                 sequence = generateSequence();
                 playSequence();
-            }, 1000); // Delay before next round starts
+            }, 1000);
         } else {
-            // Player got it wrong
             alert(`Game Over! You reached round ${round}`);
             resetGame();
         }
