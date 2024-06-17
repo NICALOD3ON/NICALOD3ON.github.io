@@ -19,8 +19,8 @@ body {
 }
 
 .circle {
-  width: 100px;
-  height: 100px;
+  width: 150px; /* Increased size */
+  height: 150px; /* Increased size */
   border-radius: 50%;
   cursor: pointer;
   background-color: transparent;
@@ -30,18 +30,18 @@ body {
   transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-#circle1 { background-color: #ffcccc; }
-#circle2 { background-color: #ccffcc; }
-#circle3 { background-color: #ccccff; }
-#circle4 { background-color: #ffffcc; }
-#circle5 { background-color: #ffccff; }
-#circle6 { background-color: #ccffff; }
+#circle1 { background-color: #efa9a9; }
+#circle2 { background-color: #aff6af; }
+#circle3 { background-color: #b4b4f4; }
+#circle4 { background-color: #f4f471; }
+#circle5 { background-color: #f3a5f3; }
+#circle6 { background-color: #a4f9f9; }
 
 #score-container {
   position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 20px;
+  top: 20px;
+  right: 20px;
+  font-size: 24px; /* Increased font size */
 }
 
 #instruction {
@@ -49,23 +49,23 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 24px;
+  font-size: 32px; /* Increased font size */
   color: #333;
 }
 
 .game-container {
   position: relative;
-  width: 400px;
-  height: 400px;
+  width: 600px; /* Increased size */
+  height: 600px; /* Increased size */
 }
 
 .circle {
   transform: translate(-50%, -50%);
 }
 
-#circle1 { top: 20%; left: 50%; }
-#circle2 { top: 35%; left: 80%; }
-#circle3 { top: 65%; left: 80%; }
-#circle4 { top: 80%; left: 50%; }
-#circle5 { top: 65%; left: 20%; }
-#circle6 { top: 35%; left: 20%; }
+#circle1 { top: 15%; left: 50%; }
+#circle2 { top: 35%; left: 85%; }
+#circle3 { top: 65%; left: 85%; }
+#circle4 { top: 85%; left: 50%; }
+#circle5 { top: 65%; left: 15%; }
+#circle6 { top: 35%; left: 15%; }
