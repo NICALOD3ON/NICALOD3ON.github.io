@@ -16,3 +16,12 @@ function startGame() {
     playSequence();
   }
   
+function generateSequence() {
+    let seq = [];
+    for (let i = 0; i < round; i++) {
+      let randomIndex = Math.floor(Math.random() * NUM_CIRCLES);
+      seq.push(randomIndex);
+    }
+    return seq;
+  }
+  
