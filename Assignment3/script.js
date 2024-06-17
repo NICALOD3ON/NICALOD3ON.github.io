@@ -72,4 +72,9 @@ function checkSequence(){
       }
     }
     
-    
+    function resetGame() {
+        round = 0;
+        sequence = [];
+        playSequence = [];
+        canClick = false;
+    }
