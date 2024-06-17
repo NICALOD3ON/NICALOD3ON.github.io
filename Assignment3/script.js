@@ -25,7 +25,7 @@ function generateSequence() {
     return seq;
   }
 
-  function playSequence() {
+function playSequence() {
     canClick = false;
     let i = 0;
     let interval = setInterval(() => {
@@ -43,4 +43,14 @@ function generateSequence() {
     setTimeout(() => {
       circles[index].style.opacity = 0.7;
     }, 500);
+}
+
+circles.forEach((circle, index) => {
+    circle.addEventListener('click', () => {
+      if (canClick) {
+        playerSequence.push(index);
+        checkSequence();
+      }
+    });
+  });
   
