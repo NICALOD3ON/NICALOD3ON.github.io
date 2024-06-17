@@ -38,4 +38,9 @@ function generateSequence() {
     }, 1000); // Adjust speed of sequence playback
   }
   
+  function lightUp(index) {
+    circles[index].style.opacity = 1;
+    setTimeout(() => {
+      circles[index].style.opacity = 0.7;
+    }, 500);
   
