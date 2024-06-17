@@ -8,3 +8,11 @@ let playerSequence = [];
 let round = 0;
 let canClick = false;
 
+startBtn.addEventListener('click', startGame);
+
+function startGame() {
+    round = 1;
+    sequence = generateSequence();
+    playSequence();
+  }
+  
