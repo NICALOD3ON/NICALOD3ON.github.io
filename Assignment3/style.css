@@ -6,52 +6,50 @@ body {
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
+  font-family: Arial, sans-serif;
 }
 
 .start-container, .game-container {
   text-align: center;
-  margin-top: 20px;
+  position: relative;
+}
+
+.hidden {
+  display: none;
 }
 
 .circle {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
-  margin: 20px; /* Increased margin to create space between circles */
+  margin: 20px;
   cursor: pointer;
-  opacity: 0.7;
   background-color: transparent;
-  transition: opacity 0.3s ease-in-out;
-  position: absolute; /* Positioning circles absolutely */
-  top: 50%; /* Positioning from the center */
-  left: 50%; /* Positioning from the center */
-  transform: translate(-50%, -50%); /* Centering circles */
+  border: 2px solid #ccc;
+  position: absolute;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out, background-color 0.3s ease-in-out;
 }
 
-.circle.selected {
-  opacity: 1;
+#circle1 { top: 30%; left: 50%; transform: translate(-150%, -150%); background-color: #ffcccc; }
+#circle2 { top: 10%; left: 50%; transform: translate(-50%, -50%); background-color: #ccffcc; }
+#circle3 { top: 30%; left: 50%; transform: translate(50%, -150%); background-color: #ccccff; }
+#circle4 { top: 70%; left: 50%; transform: translate(-150%, -50%); background-color: #ffffcc; }
+#circle5 { top: 90%; left: 50%; transform: translate(-50%, -50%); background-color: #ffccff; }
+#circle6 { top: 70%; left: 50%; transform: translate(50%, -50%); background-color: #ccffff; }
+
+#score-container {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
 }
 
-.circle:nth-child(1) {
-  transform: translate(-200px, -100px);
-}
-
-.circle:nth-child(2) {
-  transform: translate(-100px, -200px);
-}
-
-.circle:nth-child(3) {
-  transform: translate(0, -200px);
-}
-
-.circle:nth-child(4) {
-  transform: translate(100px, -200px);
-}
-
-.circle:nth-child(5) {
-  transform: translate(200px, -100px);
-}
-
-.circle:nth-child(6) {
-  transform: translate(200px, 100px);
+#instruction {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #333;
 }
