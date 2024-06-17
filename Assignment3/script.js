@@ -12,5 +12,13 @@ var colorsetup = function() {
 
 function generatecolor() {
 
-    var a = Math.floor(Math.random())
+    var a = Math.floor(Math.random()*256);
+
+    var b = Math.floor(Math.random()*256);
+
+    var c = Math.floor(Math.random()*256);
+
+    var bgcolor = "rgb("+a+","+b+","+c+")";
+
+    return bgcolor;
 }
