@@ -42,13 +42,13 @@ body {
 #circle5 { background-color: #ffccff; }
 #circle6 { background-color: #ccffff; }
 
-// <uniquifier>: Use a unique and descriptive class name
-// <weight>: Use a value from 100 to 900
+/* // <uniquifier>: Use a unique and descriptive class name
+// <weight>: Use a value from 100 to 900 */
 
 .tourney {
   font-family: "Tourney", sans-serif;
   font-optical-sizing: auto;
-  font-weight: <weight>;
+  font-weight: 10;
   font-style: normal;
   font-variation-settings:
     "wdth" 100;
