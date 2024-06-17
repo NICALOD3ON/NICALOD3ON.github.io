@@ -54,3 +54,22 @@ circles.forEach((circle, index) => {
     });
   });
   
+function checkSequence(){
+    if (playerSequence.length) === sequence.length) {
+        if (playerSequence.every((value, index) => value === sequence[index])) {
+          // Player got the sequence right
+          round++;
+          playerSequence = [];
+          setTimeout(() => {
+            sequence = generateSequence();
+            playSequence();
+          }, 1000); // Delay before next round starts
+        } else {
+          // Player got it wrong
+          alert(`Game Over! You reached round ${round}`);
+          resetGame();
+        }
+      }
+    }
+    
+    
