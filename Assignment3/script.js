@@ -48,8 +48,10 @@ function playSequence() {
 
 function lightUp(index) {
     circles[index].style.backgroundColor = COLORS[index];
+    circles[index].classList.add('selected'); // Add selected class
     setTimeout(() => {
         circles[index].style.backgroundColor = 'transparent';
+        circles[index].classList.remove('selected'); // Remove selected class
     }, 500); // Adjust how long each circle stays lit up
 }
 
